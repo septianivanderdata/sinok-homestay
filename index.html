@@ -7,7 +7,7 @@
 <meta name="description" content="Sinok Homestay di Lumban Bulbul, Balige: 2 rumah, 6 kamar, dapur lengkap, satu menit ke pantai Danau Toba. Mulai Rp199.000 per kamar per malam untuk 2 orang.">
 <link rel="canonical" href="https://sinokhomestaybalige.com/">
 <meta name="theme-color" content="#163A3F">
-<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon.png" type="image/png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Sinok Homestay Balige">
@@ -24,6 +24,7 @@
   "@context": "https://schema.org",
   "@type": "LodgingBusiness",
   "name": "Sinok Homestay Balige",
+  "logo": "https://sinokhomestaybalige.com/image/logo-lg.webp",
   "url": "https://sinokhomestaybalige.com/",
   "image": ["https://sinokhomestaybalige.com/image/og-image.jpg", "https://sinokhomestaybalige.com/image/sh1/kamar_biru.webp", "https://sinokhomestaybalige.com/image/sh2/depan.webp"],
   "description": "2 unit homestay (masing-masing 3 kamar) di Lumban Bulbul, Balige, dekat pantai Danau Toba. Dapur lengkap, WiFi, CCTV, parkiran luas.",
@@ -277,6 +278,10 @@ footer{background:var(--danau);color:rgba(255,255,255,.78);padding:4rem 0 2rem;f
 .foot a{text-decoration:none}
 .foot a:hover{color:#fff;text-decoration:underline}
 .foot .brand{color:#fff;margin-bottom:1rem}
+.brand-logo{display:inline-block}
+.brand-logo img{display:block;height:60px;width:auto;background:#fff;border-radius:12px;padding:4px 8px;box-shadow:0 4px 14px -4px rgba(0,0,0,.35);transition:height .25s var(--ease)}
+.nav.solid .brand-logo img{height:52px;box-shadow:0 0 0 1px var(--garis)}
+.brand-foot img{height:120px;border-radius:16px;padding:8px 12px;box-shadow:none}
 .foot-bottom{border-top:1px solid rgba(255,255,255,.12);margin-top:3rem;padding-top:1.5rem;font-size:.8125rem;color:rgba(255,255,255,.55);display:flex;flex-wrap:wrap;justify-content:space-between;gap:.5rem 2rem}
 .foot-bottom a{text-decoration:underline}
 
@@ -402,7 +407,7 @@ footer{background:var(--danau);color:rgba(255,255,255,.78);padding:4rem 0 2rem;f
 
 <header class="nav" id="nav">
   <div class="wrap nav-in">
-    <a href="#top" class="brand"><b>Sinok Homestay</b><small data-i18n="brand.sub">Balige, Danau Toba</small></a>
+    <a href="#top" class="brand brand-logo"><img src="image/logo.webp" alt="Sinok Homestay Balige" width="178" height="160"></a>
     <ul class="nav-links">
       <li><a href="#kamar" data-i18n="nav.stay">Kamar & Harga</a></li>
       <li><a href="#sekitar" data-i18n="nav.near">Sekitar</a></li>
@@ -656,7 +661,7 @@ footer{background:var(--danau);color:rgba(255,255,255,.78);padding:4rem 0 2rem;f
   <div class="wrap">
     <div class="foot">
       <div>
-        <a href="#top" class="brand"><b>Sinok Homestay</b><small data-i18n="brand.sub">Balige, Danau Toba</small></a>
+        <a href="#top" class="brand brand-logo brand-foot"><img src="image/logo-lg.webp" alt="Sinok Homestay Balige" width="401" height="360" loading="lazy" decoding="async"></a>
         <p data-i18n="ft.about">Penginapan keluarga di Lumban Bulbul, satu menit dari pantai Danau Toba.</p>
       </div>
       <div>
@@ -704,7 +709,7 @@ footer{background:var(--danau);color:rgba(255,255,255,.78);padding:4rem 0 2rem;f
 const WA='6281263300967';
 const T={
 id:{
- 'brand.sub':'Balige, Danau Toba','nav.stay':'Kamar & Harga','nav.near':'Sekitar','nav.faq':'Tanya Jawab','nav.loc':'Lokasi','nav.book':'Cek Tanggal',
+ 'nav.stay':'Kamar & Harga','nav.near':'Sekitar','nav.faq':'Tanya Jawab','nav.loc':'Lokasi','nav.book':'Cek Tanggal',
  'hero.title':'Menginap dekat tepi Danau Toba, di Balige','hero.sub':'Dua rumah, enam kamar, dapur lengkap. Satu menit ke Pantai Lumban Bulbul, cocok untuk keluarga maupun rombongan.',
  'hero.cta1':'Lihat kamar dan harga','hero.rate':'ulasan Google','hero.cta2':'Chat WhatsApp',
  'bk.in':'Check-in','bk.out':'Check-out','bk.guests':'Jumlah tamu','bk.type':'Yang disewa','bk.r1':'1 kamar','bk.r2':'2 kamar','bk.r3':'3 kamar','bk.u1':'1 rumah penuh (3 kamar)','bk.u2':'2 rumah penuh (6 kamar)','bk.submit':'Cek di WhatsApp',
@@ -733,7 +738,7 @@ id:{
  'ft.about':'Penginapan keluarga di Lumban Bulbul, satu menit dari pantai Danau Toba.','ft.contact':'Hubungi','ft.credit':'Foto pantai'
 },
 en:{
- 'brand.sub':'Balige, Lake Toba','nav.stay':'Rooms & Rates','nav.near':'Nearby','nav.faq':'FAQ','nav.loc':'Location','nav.book':'Check Dates',
+ 'nav.stay':'Rooms & Rates','nav.near':'Nearby','nav.faq':'FAQ','nav.loc':'Location','nav.book':'Check Dates',
  'hero.title':'Stay near the shore of Lake Toba, in Balige','hero.sub':'Two houses, six rooms, full kitchens. One minute from Lumban Bulbul Beach, made for families and groups.',
  'hero.cta1':'See rooms and rates','hero.rate':'on Google reviews','hero.cta2':'Chat on WhatsApp',
  'bk.in':'Check-in','bk.out':'Check-out','bk.guests':'Guests','bk.type':'Booking','bk.r1':'1 room','bk.r2':'2 rooms','bk.r3':'3 rooms','bk.u1':'1 whole house (3 rooms)','bk.u2':'2 whole houses (6 rooms)','bk.submit':'Check on WhatsApp',
