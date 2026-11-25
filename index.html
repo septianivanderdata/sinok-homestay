@@ -60,18 +60,20 @@
   --r-lg:14px;--r-sm:8px;
   --ease:cubic-bezier(.4,0,.2,1);
 }
-html{scroll-behavior:smooth;scroll-padding-top:80px}
+html{scroll-behavior:smooth;font-size:clamp(15px,.55vw + 8px,19px)}
+#pesan{scroll-margin-top:96px}
 body{font-family:var(--sans);font-size:1rem;line-height:1.65;color:var(--tinta);background:var(--kabut);-webkit-font-smoothing:antialiased}
 img{display:block;max-width:100%}
 a{color:inherit}
 :focus-visible{outline:2px solid var(--pasir-dark);outline-offset:3px;border-radius:4px}
-.wrap{max-width:1160px;margin:0 auto;padding:0 1.5rem}
+.wrap{max-width:76rem;margin:0 auto;padding:0 1.5rem}
 
 h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.15;letter-spacing:.005em}
 .h-sec{font-size:clamp(1.9rem,3.4vw,2.6rem);text-align:center}
 .wave-orn{display:block;margin:.85rem auto 0;width:46px;height:10px;color:var(--ulos)}
-.lead{color:var(--abu);max-width:60ch;margin:1rem auto 0;text-align:center}
-.sec{padding:5.5rem 0}
+.lead{color:var(--abu);max-width:72ch;margin:.75rem auto 0;text-align:center}
+.sec{min-height:100vh;min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding:calc(76px + 1.25rem) 0 2rem}
+.sec>.wrap{width:100%}
 
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;font-family:var(--sans);font-weight:600;font-size:.9375rem;padding:.8rem 1.5rem;border-radius:var(--r-sm);text-decoration:none;cursor:pointer;border:1px solid transparent;transition:background .2s var(--ease),color .2s var(--ease),border-color .2s var(--ease)}
 .btn-pasir{background:var(--pasir);color:var(--danau)}
@@ -106,13 +108,14 @@ h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.15;letter-spacin
 .nav.solid .lang button[aria-pressed="true"]{background:var(--danau);color:#fff}
 
 /* HERO */
-.hero{position:relative;min-height:min(92vh,820px);display:flex;align-items:center;color:#fff;isolation:isolate}
+.screen-hero{min-height:100vh;min-height:100svh;display:flex;flex-direction:column}
+.hero{position:relative;flex:1;min-height:0;display:flex;align-items:center;color:#fff;isolation:isolate}
 .hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 45%;z-index:-2}
 .hero::before{content:'';position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(14,30,32,.62) 0%,rgba(14,30,32,.3) 45%,rgba(14,30,32,0) 75%),linear-gradient(0deg,rgba(14,30,32,.5),transparent 35%)}
 .hero>.wrap{width:100%}
-.hero-copy{max-width:560px;padding:7rem 0 9rem}
-.hero h1{font-size:clamp(2.6rem,5.6vw,4.4rem);line-height:1.06}
-.hero p{font-size:1.125rem;color:rgba(255,255,255,.86);margin:1.25rem 0 2rem;max-width:44ch}
+.hero-copy{max-width:36rem;padding:calc(76px + 1.5rem) 0 5.5rem}
+.hero h1{font-size:clamp(2.4rem,min(5.2vw,8svh),4.4rem);line-height:1.06}
+.hero p{font-size:1.125rem;color:rgba(255,255,255,.86);margin:1rem 0 1.5rem;max-width:44ch}
 .hero-ctas{display:flex;flex-wrap:wrap;gap:.75rem}
 .hero-copy>*{animation:rise .8s var(--ease) both}
 .hero-copy>*:nth-child(2){animation-delay:.12s}
@@ -135,37 +138,37 @@ h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.15;letter-spacin
 .bar-msg.err{color:#F4B4A8}
 
 /* FEATURES */
-.feats{display:grid;grid-template-columns:repeat(5,1fr);padding:3.75rem 0 1rem}
+.feats{display:grid;grid-template-columns:repeat(5,1fr);padding:1.5rem 0 1.75rem}
 .feat{text-align:center;padding:0 1rem;border-right:1px solid var(--garis)}
 .feat:last-child{border-right:0}
-.feat svg{width:34px;height:34px;color:var(--danau-2);margin:0 auto .9rem;display:block}
+.feat svg{width:30px;height:30px;color:var(--danau-2);margin:0 auto .6rem;display:block}
 .feat h3{font-family:var(--sans);font-weight:600;font-size:1rem;margin-bottom:.25rem}
 .feat p{font-size:.875rem;color:var(--abu);line-height:1.5}
 
 /* STAYS */
-.stays{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem}
+.stays{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:1.75rem}
 .stay{background:var(--putih);border-radius:var(--r-lg);overflow:hidden;display:flex;flex-direction:column;border:1px solid var(--garis)}
-.stay-img{aspect-ratio:4/3;position:relative;background:var(--danau-2)}
+.stay-img{height:clamp(130px,24svh,260px);position:relative;background:var(--danau-2)}
 .stay-img img{width:100%;height:100%;object-fit:cover}
 .stay-img .count{position:absolute;right:.75rem;bottom:.75rem;background:rgba(14,38,41,.75);color:#fff;font-size:.8125rem;padding:.25rem .6rem;border-radius:6px}
 .stay-empty{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.5rem;color:rgba(255,255,255,.85);text-align:center;padding:1.5rem;background:repeating-linear-gradient(135deg,var(--danau-2) 0 14px,#2a6165 14px 28px)}
 .stay-empty svg{width:34px;height:34px}
-.stay-body{padding:1.5rem;display:flex;flex-direction:column;flex:1}
+.stay-body{padding:1.1rem 1.35rem 1.25rem;display:flex;flex-direction:column;flex:1}
 .stay h3{font-size:1.5rem}
-.stay-view{font-size:.875rem;color:var(--danau-2);font-weight:600;margin:.25rem 0 .75rem}
-.stay ul{list-style:none;margin:.25rem 0 1.25rem;display:flex;flex-direction:column;gap:.4rem;font-size:.9rem}
+.stay-view{font-size:.875rem;color:var(--danau-2);font-weight:600;margin:.15rem 0 .5rem}
+.stay ul{list-style:none;margin:0 0 .9rem;display:flex;flex-direction:column;gap:.25rem;font-size:.875rem}
 .stay li{display:flex;gap:.55rem;align-items:flex-start}
 .stay li::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--pasir-dark);margin-top:.6rem;flex-shrink:0}
-.price{margin-top:auto;padding-top:1rem;border-top:1px solid var(--garis);display:flex;align-items:baseline;gap:.4rem;flex-wrap:wrap}
+.price{margin-top:auto;padding-top:.75rem;border-top:1px solid var(--garis);display:flex;align-items:baseline;gap:.4rem;flex-wrap:wrap}
 .price small{font-size:.8125rem;color:var(--abu)}
 .price strong{font-family:var(--serif);font-weight:400;font-size:1.6rem;color:var(--danau)}
-.stay-acts{display:flex;gap:.6rem;margin-top:1rem}
-.stay-acts .btn{flex:1;padding:.7rem 1rem;font-size:.875rem}
+.stay-acts{display:flex;gap:.6rem;margin-top:.75rem}
+.stay-acts .btn{flex:1;padding:.6rem 1rem;font-size:.875rem}
 
 /* GROUPS */
 .groups{background:var(--danau);color:#fff}
 .groups-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
-.groups-img{border-radius:var(--r-lg);overflow:hidden;aspect-ratio:4/5;max-height:560px}
+.groups-img{border-radius:var(--r-lg);overflow:hidden;aspect-ratio:4/5;max-height:72svh}
 .groups-img img{width:100%;height:100%;object-fit:cover}
 .groups h2{font-size:clamp(1.9rem,3.4vw,2.6rem)}
 .groups .lead{color:rgba(255,255,255,.78);text-align:left;margin-left:0}
@@ -174,7 +177,7 @@ h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.15;letter-spacin
 .occ p{font-size:.9rem;color:rgba(255,255,255,.75);line-height:1.55}
 
 /* GALLERY */
-.gal{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:190px;gap:.75rem;margin-top:3rem}
+.gal{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:clamp(130px,21svh,250px);gap:.75rem;margin-top:2.25rem}
 .gal button{border:0;padding:0;cursor:zoom-in;border-radius:var(--r-sm);overflow:hidden;background:var(--danau-soft)}
 .gal img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease)}
 .gal button:hover img{transform:scale(1.04)}
@@ -200,15 +203,18 @@ h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.15;letter-spacin
 .food em{font-style:normal;color:var(--abu);font-size:.875rem;white-space:nowrap}
 
 /* REVIEWS */
-.reviews{background:var(--putih)}
-.rating{display:flex;flex-direction:column;align-items:center;margin-top:2.5rem}
+.qa{display:grid;grid-template-columns:1fr 1.6fr;gap:4rem;align-items:start}
+.qa-rating{background:var(--putih);border:1px solid var(--garis);border-radius:var(--r-lg);padding:2.5rem 2rem;text-align:center;display:flex;flex-direction:column;align-items:center}
+.qa-rating h2,.qa-h{font-size:clamp(1.7rem,3vw,2.3rem)}
+.qa-rating .wave-orn{margin-bottom:1.5rem}
+.qa .faq{margin:1rem 0 0;max-width:none}
 .rating-num{font-family:var(--serif);font-size:4.5rem;line-height:1;color:var(--danau)}
 .stars{display:flex;gap:.2rem;color:var(--pasir-dark);margin:.6rem 0 .35rem}
 .stars svg{width:22px;height:22px}
 .rating p{color:var(--abu);margin-bottom:1.5rem}
 
 /* FAQ */
-.faq{max-width:780px;margin:3rem auto 0}
+.faq{max-width:48rem;margin:3rem auto 0}
 .faq details{border-bottom:1px solid var(--garis)}
 .faq summary{list-style:none;cursor:pointer;padding:1.25rem 0;font-weight:600;font-size:1.0625rem;display:flex;justify-content:space-between;gap:1.5rem;align-items:center}
 .faq summary::-webkit-details-marker{display:none}
@@ -222,11 +228,13 @@ h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.15;letter-spacin
 .loc-info h3{font-family:var(--sans);font-size:.875rem;font-weight:600;color:var(--abu);margin-bottom:.2rem}
 .loc-info p{font-size:1.0625rem}
 .loc-acts{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:.5rem}
-.map{border-radius:var(--r-lg);overflow:hidden;min-height:380px;border:1px solid var(--garis);background:var(--danau-soft)}
-.map iframe{width:100%;height:100%;min-height:380px;border:0;display:block}
+.map{border-radius:var(--r-lg);overflow:hidden;min-height:clamp(300px,55svh,560px);border:1px solid var(--garis);background:var(--danau-soft)}
+.map iframe{width:100%;height:100%;min-height:clamp(300px,55svh,560px);border:0;display:block}
 
 /* CTA BANNER */
-.cta{position:relative;color:#fff;isolation:isolate;padding:7rem 0 5.5rem;overflow:hidden}
+.screen-end{min-height:100vh;min-height:100svh;display:flex;flex-direction:column}
+.cta{position:relative;color:#fff;isolation:isolate;padding:7rem 0 5.5rem;overflow:hidden;flex:1;display:flex;align-items:center;padding:5rem 0 3.5rem}
+.cta>.wrap{width:100%}
 .cta>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
 .cta::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgba(14,38,41,.92),rgba(14,38,41,.5));z-index:-1}
 .cta-wave{position:absolute;top:-1px;left:0;width:100%;height:48px;color:var(--kabut)}
@@ -249,16 +257,29 @@ footer{background:var(--danau);color:rgba(255,255,255,.78);padding:4rem 0 2rem;f
 .wa-float.show{opacity:1;transform:none;pointer-events:auto}
 .wa-float svg{width:28px;height:28px}
 
-/* LIGHTBOX */
-.lb{position:fixed;inset:0;z-index:300;background:rgba(10,24,26,.94);display:none;align-items:center;justify-content:center;padding:4rem 4.5rem}
-.lb.open{display:flex}
-.lb img{max-width:100%;max-height:82vh;border-radius:var(--r-sm)}
-.lb-cap{position:absolute;bottom:1.5rem;left:0;right:0;text-align:center;color:rgba(255,255,255,.85);font-size:.9375rem}
-.lb button{position:absolute;width:48px;height:48px;border-radius:50%;border:1px solid rgba(255,255,255,.3);background:transparent;color:#fff;font-size:1.5rem;line-height:1;cursor:pointer}
-.lb button:hover{background:rgba(255,255,255,.12)}
-.lb-x{top:1.25rem;right:1.25rem}
-.lb-p{left:1.25rem;top:50%;transform:translateY(-50%)}
-.lb-n{right:1.25rem;top:50%;transform:translateY(-50%)}
+/* LIGHTBOX (glass) */
+.lb{position:fixed;inset:0;z-index:300;display:none;align-items:center;justify-content:center;padding:2rem;background:rgba(14,30,32,.55);-webkit-backdrop-filter:blur(14px) saturate(1.1);backdrop-filter:blur(14px) saturate(1.1)}
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){.lb{background:rgba(14,30,32,.92)}.lb-panel{background:rgba(40,70,74,.95)!important}}
+.lb.open{display:flex;animation:lbFade .25s var(--ease)}
+.lb-panel{width:min(68rem,100%);max-height:100%;display:flex;flex-direction:column;gap:.85rem;padding:1rem;border-radius:22px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.32);box-shadow:0 30px 80px -20px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.35);-webkit-backdrop-filter:blur(26px) saturate(1.4);backdrop-filter:blur(26px) saturate(1.4);color:#fff;animation:lbPop .3s var(--ease)}
+@keyframes lbFade{from{opacity:0}to{opacity:1}}
+@keyframes lbPop{from{opacity:0;transform:scale(.96) translateY(8px)}to{opacity:1;transform:none}}
+.lb-head{display:flex;align-items:center;gap:1rem;padding:0 .25rem}
+.lb-cap{font-weight:600}
+.lb-count{color:rgba(255,255,255,.75);font-size:.875rem;margin-left:auto}
+.lb-stage{position:relative;border-radius:14px;overflow:hidden;background:rgba(0,0,0,.22);display:flex;align-items:center;justify-content:center;height:min(62svh,40rem)}
+.lb-stage img{max-width:100%;max-height:100%;object-fit:contain}
+.lb button{border:1px solid rgba(255,255,255,.35);background:rgba(255,255,255,.14);color:#fff;border-radius:50%;cursor:pointer;-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+.lb button:hover{background:rgba(255,255,255,.28)}
+.lb-x{width:40px;height:40px;font-size:1.4rem;line-height:1}
+.lb-nav{position:absolute;top:50%;transform:translateY(-50%);width:46px;height:46px;font-size:1.6rem;line-height:1}
+.lb-p{left:.75rem}
+.lb-n{right:.75rem}
+.lb-thumbs{display:flex;gap:.5rem;overflow-x:auto;padding:.15rem .15rem .35rem;scrollbar-width:thin}
+.lb-thumbs button{flex:0 0 auto;width:84px;height:60px;border-radius:8px;overflow:hidden;padding:0;opacity:.55;border:2px solid transparent}
+.lb-thumbs button:hover{opacity:.85}
+.lb-thumbs button[aria-current="true"]{opacity:1;border-color:var(--pasir)}
+.lb-thumbs img{width:100%;height:100%;object-fit:cover}
 
 @media(max-width:1000px){
   .nav-links{display:none}
@@ -271,28 +292,33 @@ footer{background:var(--danau);color:rgba(255,255,255,.78);padding:4rem 0 2rem;f
   .stays{grid-template-columns:1fr 1fr}
   .near{grid-template-columns:1fr 1fr;row-gap:2.75rem}
   .food{grid-template-columns:1fr}
+  .qa{gap:2.5rem}
   .food ul{grid-template-columns:1fr 1fr}
   .foot{grid-template-columns:1fr 1fr}
 }
 @media(max-width:700px){
-  .sec{padding:4rem 0}
+  .sec{padding:calc(76px + 1.5rem) 0 3rem}
   .nav .btn{display:none}
-  .hero{min-height:88vh}
-  .hero-copy{padding:7rem 0 7.5rem}
+  .hero{min-height:70svh}
+  .stay-img{height:200px}
+  .hero-copy{padding:calc(76px + 1.5rem) 0 6rem}
   .feats{grid-template-columns:1fr 1fr}
   .feat{border-right:0}
   .feat:last-child{grid-column:1/-1}
-  .stays,.groups-grid,.loc{grid-template-columns:1fr}
+  .stays,.groups-grid,.loc,.qa{grid-template-columns:1fr}
+  .qa{gap:2.5rem}
   .groups-grid{gap:2.5rem}
   .groups-img{aspect-ratio:4/3}
   .occ{grid-template-columns:1fr}
   .gal{grid-template-columns:1fr 1fr;grid-auto-rows:150px}
   .food ul{grid-template-columns:1fr}
   .foot{grid-template-columns:1fr}
-  .lb{padding:4rem 1rem}
-  .lb-p,.lb-n{top:auto;bottom:4rem;transform:none}
+  .lb{padding:.75rem}
+  .lb-stage{height:52svh}
+  .lb-thumbs button{width:64px;height:46px}
 }
 @media(max-width:420px){.bar-grid{grid-template-columns:1fr}.near{grid-template-columns:1fr}}
+@media(min-width:1000px) and (min-height:620px){html{scroll-snap-type:y proximity}.sec,.screen-hero,.screen-end{scroll-snap-align:start}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
 </style>
 </head>
@@ -333,11 +359,12 @@ footer{background:var(--danau);color:rgba(255,255,255,.78);padding:4rem 0 2rem;f
 </header>
 
 <main id="top">
-<section class="hero">
+<section class="screen-hero">
+<div class="hero">
   <img class="hero-img" src="image/hero_senja.webp" alt="Senja di Pantai Lumban Bulbul, Danau Toba" fetchpriority="high">
   <div class="wrap">
     <div class="hero-copy">
-      <h1 data-i18n="hero.title">Menginap dekat tepi Danau Toba, di Balige</h1>
+      <h1 data-i18n="hero.title">Menginap dekat tepi Danau Toba, di Balige</h1>
       <p data-i18n="hero.sub">Dua rumah, enam kamar, dapur lengkap. Satu menit ke Pantai Lumban Bulbul, cocok untuk keluarga maupun rombongan.</p>
       <div class="hero-ctas">
         <a href="#kamar" class="btn btn-pasir" data-i18n="hero.cta1">Lihat kamar dan harga</a>
@@ -345,7 +372,7 @@ footer{background:var(--danau);color:rgba(255,255,255,.78);padding:4rem 0 2rem;f
       </div>
     </div>
   </div>
-</section>
+</div>
 
 <div class="wrap bar-wrap" id="pesan">
   <form class="bar" id="bookingForm" novalidate>
@@ -377,6 +404,7 @@ footer{background:var(--danau);color:rgba(255,255,255,.78);padding:4rem 0 2rem;f
     <div class="feat"><svg aria-hidden="true"><use href="#i-shield"/></svg><h3 data-i18n="f5">CCTV 24 jam</h3><p data-i18n="f5d">Kendaraan dan barang lebih aman</p></div>
   </div>
 </div>
+</section>
 
 <section class="sec" id="kamar">
   <div class="wrap">
@@ -472,7 +500,7 @@ footer{background:var(--danau);color:rgba(255,255,255,.78);padding:4rem 0 2rem;f
   </div>
 </section>
 
-<section class="sec" id="sekitar" style="padding-top:1rem">
+<section class="sec" id="sekitar">
   <div class="wrap">
     <h2 class="h-sec" data-i18n="nb.title">Di sekitar homestay</h2>
     <svg class="wave-orn" aria-hidden="true"><use href="#i-wave"/></svg>
@@ -496,35 +524,31 @@ footer{background:var(--danau);color:rgba(255,255,255,.78);padding:4rem 0 2rem;f
   </div>
 </section>
 
-<section class="sec reviews">
-  <div class="wrap">
-    <h2 class="h-sec" data-i18n="rv.title">Kata tamu kami</h2>
-    <svg class="wave-orn" aria-hidden="true"><use href="#i-wave"/></svg>
-    <div class="rating">
+<section class="sec" id="faq">
+  <div class="wrap qa">
+    <div class="qa-rating">
+      <h2 data-i18n="rv.title">Kata tamu kami</h2>
+      <svg class="wave-orn" aria-hidden="true"><use href="#i-wave"/></svg>
       <div class="rating-num">5,0</div>
       <div class="stars" role="img" aria-label="5 dari 5 bintang"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></div>
       <p data-i18n="rv.count">dari 16 ulasan di Google</p>
       <a class="btn btn-garis" href="https://www.google.com/maps/place/Sinok+homestay/@2.3467638,99.07679,17z" target="_blank" rel="noopener" data-i18n="rv.cta">Baca ulasan di Google Maps</a>
     </div>
-  </div>
-</section>
-
-<section class="sec" id="faq">
-  <div class="wrap">
-    <h2 class="h-sec" data-i18n="faq.title">Tanya jawab</h2>
-    <svg class="wave-orn" aria-hidden="true"><use href="#i-wave"/></svg>
-    <div class="faq">
-      <details><summary data-i18n="q1">Jam berapa check-in dan check-out?</summary><p data-i18n="a1">Check-in mulai pukul 14.00, check-out paling lambat pukul 12.00. Kalau butuh jam lain, tanyakan lewat WhatsApp.</p></details>
-      <details><summary data-i18n="q2">Bisa sewa per kamar, atau harus satu rumah?</summary><p data-i18n="a2">Bisa keduanya. Per kamar mulai Rp150.000 per malam, satu rumah penuh (3 kamar) mulai Rp500.000 per malam. Harga bisa dinego untuk menginap lama.</p></details>
-      <details><summary data-i18n="q3">Boleh masak sendiri?</summary><p data-i18n="a3">Boleh. Setiap rumah punya dapur lengkap dengan kompor gas dan alat masak.</p></details>
-      <details><summary data-i18n="q4">Ada parkir untuk mobil atau bus rombongan?</summary><p data-i18n="a4">Ada, parkirannya luas dan muat banyak kendaraan. Untuk bus besar, kabari kami dulu supaya tempatnya disiapkan.</p></details>
-      <details><summary data-i18n="q5">Seberapa jauh ke pantai?</summary><p data-i18n="a5">Sekitar satu menit ke pusat Pantai Lumban Bulbul.</p></details>
-      <details><summary data-i18n="q6">Bagaimana cara pesan dan membayar?</summary><p data-i18n="a6">Isi tanggal di form pemesanan atau chat WhatsApp langsung. Ketersediaan kamar, total harga, dan cara pembayaran kami konfirmasi lewat chat.</p></details>
+    <div>
+      <h2 class="qa-h" data-i18n="faq.title">Tanya jawab</h2>
+      <div class="faq">
+        <details><summary data-i18n="q1">Jam berapa check-in dan check-out?</summary><p data-i18n="a1">Check-in mulai pukul 14.00, check-out paling lambat pukul 12.00. Kalau butuh jam lain, tanyakan lewat WhatsApp.</p></details>
+        <details><summary data-i18n="q2">Bisa sewa per kamar, atau harus satu rumah?</summary><p data-i18n="a2">Bisa keduanya. Per kamar mulai Rp150.000 per malam, satu rumah penuh (3 kamar) mulai Rp500.000 per malam. Harga bisa dinego untuk menginap lama.</p></details>
+        <details><summary data-i18n="q3">Boleh masak sendiri?</summary><p data-i18n="a3">Boleh. Setiap rumah punya dapur lengkap dengan kompor gas dan alat masak.</p></details>
+        <details><summary data-i18n="q4">Ada parkir untuk mobil atau bus rombongan?</summary><p data-i18n="a4">Ada, parkirannya luas dan muat banyak kendaraan. Untuk bus besar, kabari kami dulu supaya tempatnya disiapkan.</p></details>
+        <details><summary data-i18n="q5">Seberapa jauh ke pantai?</summary><p data-i18n="a5">Sekitar satu menit ke pusat Pantai Lumban Bulbul.</p></details>
+        <details><summary data-i18n="q6">Bagaimana cara pesan dan membayar?</summary><p data-i18n="a6">Isi tanggal di form pemesanan atau chat WhatsApp langsung. Ketersediaan kamar, total harga, dan cara pembayaran kami konfirmasi lewat chat.</p></details>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="sec" id="lokasi" style="padding-top:1rem">
+<section class="sec" id="lokasi">
   <div class="wrap">
     <h2 class="h-sec" data-i18n="loc.title">Lokasi</h2>
     <svg class="wave-orn" aria-hidden="true"><use href="#i-wave"/></svg>
@@ -543,6 +567,8 @@ footer{background:var(--danau);color:rgba(255,255,255,.78);padding:4rem 0 2rem;f
   </div>
 </section>
 
+</main>
+<div class="screen-end">
 <section class="cta">
   <svg class="cta-wave" viewBox="0 0 1440 48" preserveAspectRatio="none" aria-hidden="true"><path d="M0 0h1440v20c-120 0-180 24-360 24S900 8 720 8 540 32 360 32 120 16 0 20z" fill="currentColor"/></svg>
   <img src="image/homestay1_samping.webp" alt="" loading="lazy" decoding="async">
@@ -552,7 +578,6 @@ footer{background:var(--danau);color:rgba(255,255,255,.78);padding:4rem 0 2rem;f
     <a class="btn btn-pasir" href="#pesan" data-i18n="cta.btn">Cek tanggal menginap</a>
   </div>
 </section>
-</main>
 
 <footer>
   <div class="wrap">
@@ -587,15 +612,20 @@ footer{background:var(--danau);color:rgba(255,255,255,.78);padding:4rem 0 2rem;f
     <div class="foot-bottom">© 2026 Sinok Homestay Balige<span class="credit"><span data-i18n="ft.credit">Foto pantai</span>: <a href="https://www.thejakartapost.com/culture/2022/08/02/gradual-reawakening-lake-toba-tourism-starts-picking-up-again" target="_blank" rel="noopener">Tonggo Simangunsong / The Jakarta Post</a></span></div>
   </div>
 </footer>
+</div>
 
 <a href="https://wa.me/6281263300967?text=Halo%2C+saya+ingin+info+Sinok+Homestay+Balige" class="wa-float" id="waFloat" target="_blank" rel="noopener" aria-label="Chat WhatsApp"><svg aria-hidden="true"><use href="#i-wa"/></svg></a>
 
-<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Foto">
-  <button type="button" class="lb-x" aria-label="Tutup">×</button>
-  <button type="button" class="lb-p" aria-label="Foto sebelumnya">‹</button>
-  <img alt="">
-  <button type="button" class="lb-n" aria-label="Foto berikutnya">›</button>
-  <div class="lb-cap"></div>
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Galeri foto">
+  <div class="lb-panel">
+    <div class="lb-head"><span class="lb-cap"></span><span class="lb-count"></span><button type="button" class="lb-x" aria-label="Tutup">×</button></div>
+    <div class="lb-stage">
+      <img alt="">
+      <button type="button" class="lb-nav lb-p" aria-label="Foto sebelumnya">‹</button>
+      <button type="button" class="lb-nav lb-n" aria-label="Foto berikutnya">›</button>
+    </div>
+    <div class="lb-thumbs"></div>
+  </div>
 </div>
 
 <script>
@@ -603,7 +633,7 @@ const WA='6281263300967';
 const T={
 id:{
  'brand.sub':'Balige, Danau Toba','nav.stay':'Kamar & Harga','nav.gallery':'Galeri','nav.near':'Sekitar','nav.faq':'Tanya Jawab','nav.loc':'Lokasi','nav.book':'Cek Tanggal',
- 'hero.title':'Menginap dekat tepi Danau Toba, di Balige','hero.sub':'Dua rumah, enam kamar, dapur lengkap. Satu menit ke Pantai Lumban Bulbul, cocok untuk keluarga maupun rombongan.',
+ 'hero.title':'Menginap dekat tepi Danau Toba, di Balige','hero.sub':'Dua rumah, enam kamar, dapur lengkap. Satu menit ke Pantai Lumban Bulbul, cocok untuk keluarga maupun rombongan.',
  'hero.cta1':'Lihat kamar dan harga','hero.cta2':'Chat WhatsApp',
  'bk.in':'Check-in','bk.out':'Check-out','bk.guests':'Jumlah tamu','bk.type':'Yang disewa','bk.r1':'1 kamar','bk.r2':'2 kamar','bk.r3':'3 kamar','bk.u1':'1 rumah penuh (3 kamar)','bk.u2':'2 rumah penuh (6 kamar)','bk.submit':'Cek di WhatsApp',
  'f1':'Dekat danau','f1d':'Satu menit ke Pantai Lumban Bulbul','f2':'Dapur lengkap','f2d':'Kompor gas dan alat masak di tiap rumah','f3':'WiFi gratis','f3d':'Tersedia di setiap rumah','f4':'Parkiran luas','f4d':'Muat banyak mobil rombongan','f5':'CCTV 24 jam','f5d':'Kendaraan dan barang lebih aman',
@@ -631,7 +661,7 @@ id:{
 },
 en:{
  'brand.sub':'Balige, Lake Toba','nav.stay':'Rooms & Rates','nav.gallery':'Gallery','nav.near':'Nearby','nav.faq':'FAQ','nav.loc':'Location','nav.book':'Check Dates',
- 'hero.title':'Stay near the shore of Lake Toba, in Balige','hero.sub':'Two houses, six rooms, full kitchens. One minute from Lumban Bulbul Beach, made for families and groups.',
+ 'hero.title':'Stay near the shore of Lake Toba, in Balige','hero.sub':'Two houses, six rooms, full kitchens. One minute from Lumban Bulbul Beach, made for families and groups.',
  'hero.cta1':'See rooms and rates','hero.cta2':'Chat on WhatsApp',
  'bk.in':'Check-in','bk.out':'Check-out','bk.guests':'Guests','bk.type':'Booking','bk.r1':'1 room','bk.r2':'2 rooms','bk.r3':'3 rooms','bk.u1':'1 whole house (3 rooms)','bk.u2':'2 whole houses (6 rooms)','bk.submit':'Check on WhatsApp',
  'f1':'Near the lake','f1d':'One minute to Lumban Bulbul Beach','f2':'Full kitchen','f2d':'Gas stove and cookware in each house','f3':'Free WiFi','f3d':'Available in every house','f4':'Large parking','f4d':'Room for many group cars','f5':'24-hour CCTV','f5d':'Cars and belongings kept safer',
@@ -705,12 +735,21 @@ $('bookingForm').addEventListener('submit',e=>{
   window.open(`https://wa.me/${WA}?text=${encodeURIComponent(text)}`,'_blank','noopener');
 });
 
-const lb=$('lb'),lbImg=lb.querySelector('img'),lbCap=lb.querySelector('.lb-cap');
+const lb=$('lb'),lbImg=lb.querySelector('.lb-stage img'),lbCap=lb.querySelector('.lb-cap'),lbCount=lb.querySelector('.lb-count'),lbThumbs=lb.querySelector('.lb-thumbs');
 const albums={gal:[...document.querySelectorAll('#gal img')].map(i=>({src:i.getAttribute('src'),alt:i.alt}))};
 albums.u1=albums.gal.slice();
 let cur=[],idx=0,lastFocus=null;
-function show(i){idx=(i+cur.length)%cur.length;lbImg.src=cur[idx].src;lbImg.alt=cur[idx].alt;lbCap.textContent=`${cur[idx].alt} (${idx+1}/${cur.length})`;}
-function openLb(a,i){cur=albums[a];lastFocus=document.activeElement;show(i);lb.classList.add('open');document.body.style.overflow='hidden';lb.querySelector('.lb-x').focus();}
+function show(i){
+  idx=(i+cur.length)%cur.length;
+  lbImg.src=cur[idx].src;lbImg.alt=cur[idx].alt;lbCap.textContent=cur[idx].alt;lbCount.textContent=`${idx+1} / ${cur.length}`;
+  [...lbThumbs.children].forEach((t,k)=>t.setAttribute('aria-current',k===idx));
+  lbThumbs.children[idx].scrollIntoView({block:'nearest',inline:'center'});
+}
+function openLb(a,i){
+  cur=albums[a];lastFocus=document.activeElement;lbThumbs.innerHTML='';
+  cur.forEach((p,k)=>{const b=document.createElement('button');b.type='button';b.setAttribute('aria-label',p.alt);b.innerHTML=`<img src="${p.src}" alt="">`;b.onclick=()=>show(k);lbThumbs.appendChild(b);});
+  lb.classList.add('open');document.body.style.overflow='hidden';show(i);lb.querySelector('.lb-x').focus();
+}
 function closeLb(){lb.classList.remove('open');document.body.style.overflow='';if(lastFocus)lastFocus.focus();}
 document.querySelectorAll('#gal button').forEach(b=>b.addEventListener('click',()=>openLb('gal',+b.dataset.i)));
 document.querySelectorAll('[data-album]').forEach(b=>b.addEventListener('click',()=>openLb(b.dataset.album,0)));
@@ -718,8 +757,9 @@ lb.querySelector('.lb-x').onclick=closeLb;
 lb.querySelector('.lb-p').onclick=()=>show(idx-1);
 lb.querySelector('.lb-n').onclick=()=>show(idx+1);
 lb.addEventListener('click',e=>{if(e.target===lb)closeLb();});
-let tx=0;lb.addEventListener('touchstart',e=>tx=e.changedTouches[0].screenX,{passive:true});
-lb.addEventListener('touchend',e=>{const d=e.changedTouches[0].screenX-tx;if(Math.abs(d)>50)show(idx+(d<0?1:-1));});
+const stage=lb.querySelector('.lb-stage');let tx=0;
+stage.addEventListener('touchstart',e=>tx=e.changedTouches[0].screenX,{passive:true});
+stage.addEventListener('touchend',e=>{const d=e.changedTouches[0].screenX-tx;if(Math.abs(d)>50)show(idx+(d<0?1:-1));});
 addEventListener('keydown',e=>{if(!lb.classList.contains('open'))return;if(e.key==='Escape')closeLb();if(e.key==='ArrowLeft')show(idx-1);if(e.key==='ArrowRight')show(idx+1);});
 
 let saved='id';try{saved=localStorage.getItem('sinok-lang')||'id'}catch(e){}
