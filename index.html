@@ -200,8 +200,8 @@ h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.15;letter-spacin
 .tabs button{font:600 .9375rem var(--sans);padding:.6rem 1.25rem;border-radius:999px;border:1px solid var(--garis);background:transparent;color:var(--tinta);cursor:pointer;transition:background .2s var(--ease),color .2s var(--ease)}
 .tabs button:hover{border-color:var(--danau-2)}
 .tabs button[aria-selected="true"]{background:var(--danau);border-color:var(--danau);color:#fff}
-.tp-stack{display:grid;margin-top:1.75rem}
-.tabpanel{grid-area:1/1}
+.tp-stack{display:grid;grid-template-columns:minmax(0,1fr);margin-top:1.75rem}
+.tabpanel{grid-area:1/1;min-width:0}
 .tabpanel[hidden]{display:block;visibility:hidden}
 .spots{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem}
 .spot{background:var(--putih);border:1px solid var(--garis);border-radius:var(--r-lg);overflow:hidden;display:flex;flex-direction:column}
@@ -323,7 +323,7 @@ footer{background:var(--danau);color:rgba(255,255,255,.78);padding:4rem 0 2rem;f
     .foot{grid-template-columns:1fr 1fr}
 }
 @media(max-width:700px){
-  .sec{padding:calc(76px + 1.5rem) 0 3rem}
+  .sec{padding:3.5rem 0}
   .nav .btn{display:none}
   .hero{min-height:70svh}
   .stay-img{height:200px}
@@ -345,6 +345,9 @@ footer{background:var(--danau);color:rgba(255,255,255,.78);padding:4rem 0 2rem;f
 @media(max-width:420px){.bar-grid{grid-template-columns:1fr}}
 /* Kartu kamar & wisata: geser ke samping di HP/tablet */
 @media(max-width:1000px){
+  html{scroll-padding-top:72px}
+  .sec,.screen-end{min-height:0}
+  .sec{padding:4.5rem 0}
   .stays,.spots,.revs{display:flex;gap:1rem;overflow-x:auto;scroll-snap-type:x mandatory;margin-inline:-1.5rem;padding:0 1.5rem .25rem;scroll-padding-inline:1.5rem;scrollbar-width:none;overscroll-behavior-x:contain}
   .stays::-webkit-scrollbar,.spots::-webkit-scrollbar,.revs::-webkit-scrollbar{display:none}
   .stay,.spot,.rev{flex:0 0 calc(50% - 1.75rem);scroll-snap-align:start}
@@ -356,6 +359,8 @@ footer{background:var(--danau);color:rgba(255,255,255,.78);padding:4rem 0 2rem;f
 }
 @media(max-width:700px){
   .stay,.spot,.rev{flex-basis:84%}
+  .tabpanel[hidden]{display:none}
+  .feat,.feat:first-child{padding:0;border-right:0}
   .stay-img{height:clamp(150px,26svh,210px)}
 }
 @media(max-width:400px){
@@ -363,6 +368,7 @@ footer{background:var(--danau);color:rgba(255,255,255,.78);padding:4rem 0 2rem;f
   .feat:last-child{grid-column:auto}
 }
 @media(min-width:701px){.dots{display:none}}
+@media(max-width:700px){.sec{padding:3rem 0}}
 @media(min-width:1000px) and (max-height:740px){
   .stay-img{height:96px}
   .feats p{display:none}
