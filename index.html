@@ -43,7 +43,7 @@
   ]
 }
 </script>
-<link rel="preload" as="image" href="image/homestay1_depan.webp" fetchpriority="high">
+<link rel="preload" as="image" href="image/hero_senja.webp" fetchpriority="high">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -107,8 +107,8 @@ h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.15;letter-spacin
 
 /* HERO */
 .hero{position:relative;min-height:min(92vh,820px);display:flex;align-items:center;color:#fff;isolation:isolate}
-.hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
-.hero::before{content:'';position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(14,38,41,.86) 0%,rgba(14,38,41,.55) 45%,rgba(14,38,41,.15) 100%),linear-gradient(0deg,rgba(14,38,41,.55),transparent 40%)}
+.hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 45%;z-index:-2}
+.hero::before{content:'';position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(14,30,32,.62) 0%,rgba(14,30,32,.3) 45%,rgba(14,30,32,0) 75%),linear-gradient(0deg,rgba(14,30,32,.5),transparent 35%)}
 .hero>.wrap{width:100%}
 .hero-copy{max-width:560px;padding:7rem 0 9rem}
 .hero h1{font-size:clamp(2.6rem,5.6vw,4.4rem);line-height:1.06}
@@ -241,7 +241,8 @@ footer{background:var(--danau);color:rgba(255,255,255,.78);padding:4rem 0 2rem;f
 .foot a{text-decoration:none}
 .foot a:hover{color:#fff;text-decoration:underline}
 .foot .brand{color:#fff;margin-bottom:1rem}
-.foot-bottom{border-top:1px solid rgba(255,255,255,.12);margin-top:3rem;padding-top:1.5rem;font-size:.8125rem;color:rgba(255,255,255,.55)}
+.foot-bottom{border-top:1px solid rgba(255,255,255,.12);margin-top:3rem;padding-top:1.5rem;font-size:.8125rem;color:rgba(255,255,255,.55);display:flex;flex-wrap:wrap;justify-content:space-between;gap:.5rem 2rem}
+.foot-bottom a{text-decoration:underline}
 
 /* FLOATING WA */
 .wa-float{position:fixed;right:1.25rem;bottom:1.25rem;z-index:90;width:56px;height:56px;border-radius:50%;background:#1FAF55;color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 24px -6px rgba(31,175,85,.6);opacity:0;transform:translateY(12px);pointer-events:none;transition:opacity .25s var(--ease),transform .25s var(--ease)}
@@ -333,7 +334,7 @@ footer{background:var(--danau);color:rgba(255,255,255,.78);padding:4rem 0 2rem;f
 
 <main id="top">
 <section class="hero">
-  <img class="hero-img" src="image/homestay1_depan.webp" alt="Tampak depan Sinok Homestay di Lumban Bulbul, Balige" fetchpriority="high">
+  <img class="hero-img" src="image/hero_senja.webp" alt="Senja di Pantai Lumban Bulbul, Danau Toba" fetchpriority="high">
   <div class="wrap">
     <div class="hero-copy">
       <h1 data-i18n="hero.title">Menginap dekat tepi Danau Toba, di Balige</h1>
@@ -583,7 +584,7 @@ footer{background:var(--danau);color:rgba(255,255,255,.78);padding:4rem 0 2rem;f
         </ul>
       </div>
     </div>
-    <div class="foot-bottom">© 2026 Sinok Homestay Balige</div>
+    <div class="foot-bottom">© 2026 Sinok Homestay Balige<span class="credit"><span data-i18n="ft.credit">Foto pantai</span>: <a href="https://www.thejakartapost.com/culture/2022/08/02/gradual-reawakening-lake-toba-tourism-starts-picking-up-again" target="_blank" rel="noopener">Tonggo Simangunsong / The Jakarta Post</a></span></div>
   </div>
 </footer>
 
@@ -626,7 +627,7 @@ id:{
  'q6':'Bagaimana cara pesan dan membayar?','a6':'Isi tanggal di form pemesanan atau chat WhatsApp langsung. Ketersediaan kamar, total harga, dan cara pembayaran kami konfirmasi lewat chat.',
  'loc.title':'Lokasi','loc.addr':'Alamat','loc.time':'Check-in dan check-out','loc.timev':'Check-in 14.00, check-out 12.00','loc.wa':'Chat WhatsApp','loc.maps':'Buka di Google Maps',
  'cta.title':'Rencanakan liburan Anda ke Danau Toba','cta.sub':'Pesan langsung ke pemilik lewat WhatsApp. Tanpa biaya aplikasi, dan Anda bisa tanya apa saja sebelum memesan.','cta.btn':'Cek tanggal menginap',
- 'ft.about':'Penginapan keluarga di Lumban Bulbul, satu menit dari pantai Danau Toba.','ft.contact':'Hubungi'
+ 'ft.about':'Penginapan keluarga di Lumban Bulbul, satu menit dari pantai Danau Toba.','ft.contact':'Hubungi','ft.credit':'Foto pantai'
 },
 en:{
  'brand.sub':'Balige, Lake Toba','nav.stay':'Rooms & Rates','nav.gallery':'Gallery','nav.near':'Nearby','nav.faq':'FAQ','nav.loc':'Location','nav.book':'Check Dates',
@@ -654,7 +655,7 @@ en:{
  'q6':'How do I book and pay?','a6':'Enter your dates in the booking form or chat with us on WhatsApp. We confirm availability, total price and payment in the chat.',
  'loc.title':'Location','loc.addr':'Address','loc.time':'Check-in and check-out','loc.timev':'Check-in 2 PM, check-out 12 PM','loc.wa':'Chat on WhatsApp','loc.maps':'Open in Google Maps',
  'cta.title':'Plan your trip to Lake Toba','cta.sub':'Book directly with the owner on WhatsApp. No app fees, and you can ask anything before you book.','cta.btn':'Check your dates',
- 'ft.about':'A family guesthouse in Lumban Bulbul, one minute from the Lake Toba shore.','ft.contact':'Contact'
+ 'ft.about':'A family guesthouse in Lumban Bulbul, one minute from the Lake Toba shore.','ft.contact':'Contact','ft.credit':'Beach photo'
 }};
 
 let lang='id';
