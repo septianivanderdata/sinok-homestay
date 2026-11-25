@@ -189,22 +189,36 @@ h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.15;letter-spacin
 .gal .wide{grid-column:span 2}
 
 /* NEARBY */
-.near{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem;margin-top:3.5rem}
-.place{background:var(--putih);border:1px solid var(--garis);border-radius:var(--r-lg);padding:2.25rem 1.25rem 1.5rem;text-align:center;position:relative;text-decoration:none;color:var(--tinta);display:flex;flex-direction:column;transition:border-color .2s var(--ease)}
-.place:hover{border-color:var(--danau-2)}
-.place-ic{position:absolute;top:-24px;left:50%;transform:translateX(-50%);width:48px;height:48px;border-radius:50%;background:var(--putih);border:1px solid var(--garis);display:flex;align-items:center;justify-content:center;color:var(--danau-2)}
-.place-ic svg{width:22px;height:22px}
-.place h3{font-family:var(--sans);font-weight:600;font-size:1rem;margin-bottom:.35rem}
-.place p{font-size:.875rem;color:var(--abu);line-height:1.5;flex:1}
-.place span{display:block;margin-top:1rem;font-size:.875rem;font-weight:600;color:var(--danau-2)}
-.food{margin-top:3.5rem;display:grid;grid-template-columns:240px 1fr;gap:2rem;align-items:start;border-top:1px solid var(--garis);padding-top:2.5rem}
-.food h3{font-size:1.5rem}
-.food h3+p{font-size:.875rem;color:var(--abu);margin-top:.5rem}
-.food ul{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:.25rem 2rem}
-.food a{display:flex;justify-content:space-between;gap:1rem;padding:.75rem 0;border-bottom:1px dashed var(--garis);text-decoration:none;font-size:.9375rem}
-.food a:hover b{color:var(--danau-2);text-decoration:underline}
-.food b{font-weight:500}
-.food em{font-style:normal;color:var(--abu);font-size:.875rem;white-space:nowrap}
+
+/* NEARBY tabs */
+.tabs{display:flex;justify-content:center;flex-wrap:wrap;gap:.5rem;margin-top:1.5rem}
+.tabs button{font:600 .9375rem var(--sans);padding:.6rem 1.25rem;border-radius:999px;border:1px solid var(--garis);background:transparent;color:var(--tinta);cursor:pointer;transition:background .2s var(--ease),color .2s var(--ease)}
+.tabs button:hover{border-color:var(--danau-2)}
+.tabs button[aria-selected="true"]{background:var(--danau);border-color:var(--danau);color:#fff}
+.tp-stack{display:grid;margin-top:1.75rem}
+.tabpanel{grid-area:1/1}
+.tabpanel[hidden]{display:block;visibility:hidden}
+.spots{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem}
+.spot{background:var(--putih);border:1px solid var(--garis);border-radius:var(--r-lg);overflow:hidden;display:flex;flex-direction:column}
+.spot figure{position:relative;height:clamp(150px,30svh,300px);background:var(--danau-soft)}
+.spot img{width:100%;height:100%;object-fit:cover}
+.spot figcaption{position:absolute;left:0;right:0;bottom:0;padding:1.25rem .65rem .4rem;font-size:.6875rem;color:rgba(255,255,255,.88);background:linear-gradient(transparent,rgba(0,0,0,.6))}
+.spot figcaption a{color:inherit}
+.spot-b{padding:1rem 1.1rem 1.15rem;display:flex;flex-direction:column;flex:1}
+.spot h3{font-family:var(--sans);font-weight:600;font-size:1rem;margin-bottom:.3rem}
+.spot p{font-size:.875rem;color:var(--abu);line-height:1.5;flex:1}
+.spot-m{margin-top:.75rem;font-size:.875rem;font-weight:600;color:var(--danau-2);text-decoration:none}
+.spot-m:hover{text-decoration:underline}
+.tp-note{text-align:center;color:var(--abu);font-size:.875rem;margin:0 auto 1.25rem;max-width:62ch}
+.plist{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.plist a{display:flex;gap:.9rem;align-items:center;background:var(--putih);border:1px solid var(--garis);border-radius:var(--r-lg);padding:1rem 1.1rem;text-decoration:none;height:100%;transition:border-color .2s var(--ease)}
+.plist a:hover{border-color:var(--danau-2)}
+.pl-ic{width:44px;height:44px;border-radius:50%;background:var(--danau-soft);display:flex;align-items:center;justify-content:center;color:var(--danau-2);flex-shrink:0}
+.pl-ic svg{width:22px;height:22px}
+.pl-b{flex:1;min-width:0}
+.pl-b b{display:block;font-weight:600}
+.pl-b span{font-size:.8125rem;color:var(--abu)}
+.pl-d{font-size:.875rem;font-weight:600;color:var(--danau-2);white-space:nowrap}
 
 /* REVIEWS */
 .qa{display:grid;grid-template-columns:1fr 1.6fr;gap:4rem;align-items:start}
@@ -294,11 +308,10 @@ footer{background:var(--danau);color:rgba(255,255,255,.78);padding:4rem 0 2rem;f
   .feats{grid-template-columns:repeat(3,1fr);row-gap:2.25rem}
   .feat:nth-child(3){border-right:0}
   .stays{grid-template-columns:1fr 1fr}
-  .near{grid-template-columns:1fr 1fr;row-gap:2.75rem}
-  .food{grid-template-columns:1fr}
-  .qa{gap:2.5rem}
-  .food ul{grid-template-columns:1fr 1fr}
-  .foot{grid-template-columns:1fr 1fr}
+  .spots{grid-template-columns:1fr 1fr}
+  .plist{grid-template-columns:1fr 1fr}
+      .qa{gap:2.5rem}
+    .foot{grid-template-columns:1fr 1fr}
 }
 @media(max-width:700px){
   .sec{padding:calc(76px + 1.5rem) 0 3rem}
@@ -314,14 +327,15 @@ footer{background:var(--danau);color:rgba(255,255,255,.78);padding:4rem 0 2rem;f
   .groups-grid{gap:2.5rem}
   .groups-img{aspect-ratio:4/3}
   .occ{grid-template-columns:1fr}
+  .plist{grid-template-columns:1fr}
+  .spot figure{height:170px}
   .gal{grid-template-columns:1fr 1fr;grid-auto-rows:150px}
-  .food ul{grid-template-columns:1fr}
-  .foot{grid-template-columns:1fr}
+    .foot{grid-template-columns:1fr}
   .lb{padding:.75rem}
   .lb-stage{height:52svh}
   .lb-thumbs button{width:64px;height:46px}
 }
-@media(max-width:420px){.bar-grid{grid-template-columns:1fr}.near{grid-template-columns:1fr}}
+@media(max-width:420px){.bar-grid{grid-template-columns:1fr}}
 @media(min-width:1000px) and (min-height:620px){html{scroll-snap-type:y proximity}.sec,.screen-hero,.screen-end{scroll-snap-align:start}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
 </style>
@@ -340,6 +354,8 @@ footer{background:var(--danau);color:rgba(255,255,255,.78);padding:4rem 0 2rem;f
   <symbol id="i-monument" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2 3v11h-4V6zM7 17h10l1.5 4h-13z"/></g></symbol>
   <symbol id="i-roof" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9c3 0 6-2 10-6 4 4 7 6 10 6"/><path d="M5 9.5V20h14V9.5M9 20v-5h6v5"/></g></symbol>
   <symbol id="i-camera" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h4l2-3h6l2 3h4v11H3z"/><circle cx="12" cy="13" r="3.5"/></g></symbol>
+  <symbol id="i-cup" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h12v5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5z"/><path d="M16 10.5h1.5a2.5 2.5 0 0 1 0 5H16M8 3.5c0 1 1 1 1 2M12 3.5c0 1 1 1 1 2M3 21h14"/></g></symbol>
+  <symbol id="i-bowl" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11h18a9 9 0 0 1-18 0z"/><path d="M8 20h8M14 7l5-4M10 7l3-4"/></g></symbol>
   <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 2.8l2.8 5.8 6.3.9-4.6 4.4 1.1 6.3L12 17.2l-5.6 3 1.1-6.3L2.9 9.5l6.3-.9z" fill="currentColor"/></symbol>
   <symbol id="i-wa" viewBox="0 0 32 32"><path fill="currentColor" d="M16 3C8.8 3 3 8.7 3 15.8c0 2.5.7 4.9 2 6.9L3 29l6.5-2c1.9 1 4.1 1.6 6.5 1.6 7.2 0 13-5.7 13-12.8S23.2 3 16 3zm0 23.3c-2.1 0-4.1-.6-5.8-1.6l-.4-.2-3.9 1.2 1.2-3.7-.3-.4c-1.2-1.7-1.8-3.7-1.8-5.8 0-5.9 4.9-10.6 11-10.6s11 4.8 11 10.6-4.9 10.5-11 10.5zm6-7.9c-.3-.2-2-1-2.3-1.1-.3-.1-.5-.2-.8.2-.2.3-.9 1.1-1.1 1.3-.2.2-.4.2-.7.1-.3-.2-1.4-.5-2.7-1.7-1-.9-1.7-2-1.9-2.3-.2-.3 0-.5.1-.7l.5-.6c.2-.2.2-.3.3-.6.1-.2 0-.4 0-.6l-1.1-2.6c-.3-.7-.6-.6-.8-.6h-.7c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.8s1.2 3.2 1.4 3.4c.2.2 2.4 3.6 5.8 5 .8.4 1.4.6 1.9.7.8.3 1.6.2 2.2.1.7-.1 2-.8 2.3-1.6.3-.8.3-1.5.2-1.6-.1-.2-.3-.3-.7-.4z"/></symbol>
 </svg>
@@ -505,22 +521,54 @@ footer{background:var(--danau);color:rgba(255,255,255,.78);padding:4rem 0 2rem;f
   <div class="wrap">
     <h2 class="h-sec" data-i18n="nb.title">Di sekitar homestay</h2>
     <svg class="wave-orn" aria-hidden="true"><use href="#i-wave"/></svg>
-    <div class="near">
-      <a class="place" href="https://www.google.com/maps/dir/?api=1&origin=2.3467638,99.07679&destination=Pantai+Lumban+Bulbul+Balige" target="_blank" rel="noopener"><div class="place-ic"><svg aria-hidden="true"><use href="#i-beach"/></svg></div><h3>Pantai Lumban Bulbul</h3><p data-i18n="nb1">Pantai pasir putih Danau Toba, cukup jalan kaki dari homestay.</p><span data-i18n="nb.walk">Jalan kaki</span></a>
-      <a class="place" href="https://www.google.com/maps/dir/?api=1&origin=2.3467638,99.07679&destination=TB+Silalahi+Center+Balige" target="_blank" rel="noopener"><div class="place-ic"><svg aria-hidden="true"><use href="#i-museum"/></svg></div><h3>TB Silalahi Center</h3><p data-i18n="nb2">Museum sejarah dan budaya Batak dengan replika rumah adat.</p><span data-i18n="nb.route">Lihat rute</span></a>
-      <a class="place" href="https://www.google.com/maps/dir/?api=1&origin=2.3467638,99.07679&destination=Makam+Sisingamangaraja+XII+Soposurung+Balige" target="_blank" rel="noopener"><div class="place-ic"><svg aria-hidden="true"><use href="#i-monument"/></svg></div><h3>Makam Sisingamangaraja XII</h3><p data-i18n="nb3">Makam pahlawan nasional di Soposurung, Balige.</p><span data-i18n="nb.route">Lihat rute</span></a>
-      <a class="place" href="https://www.google.com/maps/dir/?api=1&origin=2.3467638,99.07679&destination=Balerong+Onan+Balige" target="_blank" rel="noopener"><div class="place-ic"><svg aria-hidden="true"><use href="#i-roof"/></svg></div><h3>Balerong Onan Balige</h3><p data-i18n="nb4">Pasar tradisional beratap khas rumah Batak, paling ramai di hari pekan.</p><span data-i18n="nb.route">Lihat rute</span></a>
+    <div class="tabs" role="tablist" aria-label="Kategori tempat">
+      <button type="button" role="tab" id="t-wisata" aria-controls="tp-wisata" aria-selected="true" data-i18n="nb.t1">Tempat wisata</button>
+      <button type="button" role="tab" id="t-kafe" aria-controls="tp-kafe" aria-selected="false" tabindex="-1" data-i18n="nb.t2">Kafe &amp; kopi</button>
+      <button type="button" role="tab" id="t-makan" aria-controls="tp-makan" aria-selected="false" tabindex="-1" data-i18n="nb.t3">Rumah makan</button>
     </div>
-    <div class="food">
-      <div><h3 data-i18n="fd.title">Tempat makan terdekat</h3><p data-i18n="fd.note">Jarak garis lurus dari homestay, menurut Google Maps.</p></div>
-      <ul>
-        <li><a href="https://www.google.com/maps/search/?api=1&query=Lago+Hotel+%26+Resto+Balige" target="_blank" rel="noopener"><b>Lago Hotel & Resto</b><em>0,2 km</em></a></li>
-        <li><a href="https://www.google.com/maps/search/?api=1&query=Lagos+Cafe+Balige" target="_blank" rel="noopener"><b>Lagos Cafe</b><em>0,2 km</em></a></li>
-        <li><a href="https://www.google.com/maps/search/?api=1&query=Bulbul+Resto+Balige" target="_blank" rel="noopener"><b>Bulbul Resto</b><em>0,3 km</em></a></li>
-        <li><a href="https://www.google.com/maps/search/?api=1&query=Rumah+Dimsum+Balige" target="_blank" rel="noopener"><b>Rumah Dimsum Balige</b><em>1,1 km</em></a></li>
-        <li><a href="https://www.google.com/maps/search/?api=1&query=Tabo+seafood+Balige" target="_blank" rel="noopener"><b>Tabo Seafood</b><em>1,1 km</em></a></li>
-        <li><a href="https://www.google.com/maps/search/?api=1&query=RM.+Khas+Batak+Monalisa+Balige" target="_blank" rel="noopener"><b>RM Khas Batak Monalisa</b><em>1,4 km</em></a></li>
+    <div class="tp-stack">
+    <div class="tabpanel" id="tp-wisata" role="tabpanel" aria-labelledby="t-wisata">
+      <div class="spots">
+          <article class="spot">
+            <figure><img src="image/sekitar/pantai_bulbul.webp" alt="Pantai pasir putih Danau Toba" loading="lazy" decoding="async"><figcaption><span data-i18n="nb.photo">Foto</span>: <a href="https://www.flickr.com/photos/87511166@N02/51132006743/" target="_blank" rel="noopener">Beril Huliselan</a>, <a href="https://creativecommons.org/licenses/by/2.0/" target="_blank" rel="noopener">CC BY 2.0</a></figcaption></figure>
+            <div class="spot-b"><h3>Pantai Lumban Bulbul</h3><p data-i18n="sp1">Pantai pasir putih Danau Toba, cukup jalan kaki dari homestay.</p><a class="spot-m" href="https://www.google.com/maps/dir/?api=1&amp;origin=2.3467638,99.07679&amp;destination=Pantai+Lumban+Bulbul+Balige" target="_blank" rel="noopener" data-i18n="nb.walk">Jalan kaki</a></div>
+          </article>
+          <article class="spot">
+            <figure><img src="image/sekitar/tb_silalahi.webp" alt="Gedung TB Silalahi Center" loading="lazy" decoding="async"><figcaption><span data-i18n="nb.photo">Foto</span>: <a href="https://commons.wikimedia.org/wiki/File:TB_SILALAHI_CENTER.jpg" target="_blank" rel="noopener">Macyagin</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a></figcaption></figure>
+            <div class="spot-b"><h3>TB Silalahi Center</h3><p data-i18n="sp2">Museum sejarah dan budaya Batak dengan replika rumah adat.</p><a class="spot-m" href="https://www.google.com/maps/dir/?api=1&amp;origin=2.3467638,99.07679&amp;destination=TB+Silalahi+Center+Balige" target="_blank" rel="noopener" data-i18n="nb.route">Lihat rute</a></div>
+          </article>
+          <article class="spot">
+            <figure><img src="image/sekitar/balerong_onan.webp" alt="Foto arsip deretan atap Balerong Onan Balige" loading="lazy" decoding="async"><figcaption><span data-i18n="nb.photo">Foto</span>: <span data-i18n="nb.archive">arsip</span> <a href="https://commons.wikimedia.org/wiki/File:KITLV_A1034_-_Pasarloodsen_te_Balige,_KITLV_153297.tiff" target="_blank" rel="noopener">KITLV</a>, <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a></figcaption></figure>
+            <div class="spot-b"><h3>Balerong Onan Balige</h3><p data-i18n="sp3">Pasar tradisional beratap khas rumah Batak, paling ramai di hari pekan.</p><a class="spot-m" href="https://www.google.com/maps/dir/?api=1&amp;origin=2.3467638,99.07679&amp;destination=Balerong+Onan+Balige" target="_blank" rel="noopener" data-i18n="nb.route">Lihat rute</a></div>
+          </article>
+          <article class="spot">
+            <figure><img src="image/sekitar/huta_ginjang.webp" alt="Panorama Danau Toba dari Puncak Huta Ginjang" loading="lazy" decoding="async"><figcaption><span data-i18n="nb.photo">Foto</span>: <a href="https://commons.wikimedia.org/wiki/File:Puncak_Huta_Ginjang,_Muara,_Sumatera_Utara.jpg" target="_blank" rel="noopener">Nengri</a>, <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a></figcaption></figure>
+            <div class="spot-b"><h3>Puncak Huta Ginjang</h3><p data-i18n="sp4">Bukit pandang di Muara dengan panorama Danau Toba dari ketinggian, juga tempat paralayang.</p><a class="spot-m" href="https://www.google.com/maps/dir/?api=1&amp;origin=2.3467638,99.07679&amp;destination=Huta+Ginjang+Muara" target="_blank" rel="noopener" data-i18n="nb.route">Lihat rute</a></div>
+          </article>
+      </div>
+    </div>
+    <div class="tabpanel" id="tp-kafe" role="tabpanel" aria-labelledby="t-kafe" hidden>
+      <p class="tp-note" data-i18n="nb.kafe.note">Kafe yang sering direkomendasikan pengunjung. Jarak garis lurus dari homestay; ketuk untuk melihat foto dan ulasan di Google Maps.</p>
+      <ul class="plist">
+          <li><a href="https://www.google.com/maps/search/?api=1&amp;query=Lagos+Cafe+Balige" target="_blank" rel="noopener"><span class="pl-ic"><svg aria-hidden="true"><use href="#i-cup"/></svg></span><span class="pl-b"><b>Lagos Cafe</b><span data-i18n="kf1">Paling dekat dari homestay</span></span><span class="pl-d">0,2 km</span></a></li>
+          <li><a href="https://www.google.com/maps/search/?api=1&amp;query=Hutanta+Cafe+Balige" target="_blank" rel="noopener"><span class="pl-ic"><svg aria-hidden="true"><use href="#i-cup"/></svg></span><span class="pl-b"><b>Hutanta Cafe</b><span data-i18n="kf2">Kafe di pusat kota Balige</span></span><span class="pl-d">1,1 km</span></a></li>
+          <li><a href="https://www.google.com/maps/search/?api=1&amp;query=The+Nada+Coffee+%26+Resto+Balige" target="_blank" rel="noopener"><span class="pl-ic"><svg aria-hidden="true"><use href="#i-cup"/></svg></span><span class="pl-b"><b>The Nada Coffee & Resto</b><span data-i18n="kf3">Kopi dan makan di Jl. SM Raja</span></span><span class="pl-d">1,7 km</span></a></li>
+          <li><a href="https://www.google.com/maps/search/?api=1&amp;query=Tepi+Danau+Bistro+Balige" target="_blank" rel="noopener"><span class="pl-ic"><svg aria-hidden="true"><use href="#i-cup"/></svg></span><span class="pl-b"><b>Tepi Danau Bistro</b><span data-i18n="kf4">Bistro dengan pemandangan danau</span></span><span class="pl-d">2,7 km</span></a></li>
+          <li><a href="https://www.google.com/maps/search/?api=1&amp;query=Damar+Toba+Balige" target="_blank" rel="noopener"><span class="pl-ic"><svg aria-hidden="true"><use href="#i-cup"/></svg></span><span class="pl-b"><b>Damar Toba</b><span data-i18n="kf5">Makan di tepi danau, banyak dipuji pengunjung</span></span><span class="pl-d">3,0 km</span></a></li>
+          <li><a href="https://www.google.com/maps/search/?api=1&amp;query=Cafe+Hollywood+Balige" target="_blank" rel="noopener"><span class="pl-ic"><svg aria-hidden="true"><use href="#i-cup"/></svg></span><span class="pl-b"><b>Cafe Hollywood</b><span data-i18n="kf6">Sering masuk daftar kafe populer Balige</span></span><span class="pl-d">3,7 km</span></a></li>
       </ul>
+    </div>
+    <div class="tabpanel" id="tp-makan" role="tabpanel" aria-labelledby="t-makan" hidden>
+      <p class="tp-note" data-i18n="nb.makan.note">Rumah makan terdekat dari homestay. Jarak garis lurus; ketuk untuk melihat foto dan ulasan di Google Maps.</p>
+      <ul class="plist">
+          <li><a href="https://www.google.com/maps/search/?api=1&amp;query=Lago+Hotel+%26+Resto+Balige" target="_blank" rel="noopener"><span class="pl-ic"><svg aria-hidden="true"><use href="#i-bowl"/></svg></span><span class="pl-b"><b>Lago Hotel & Resto</b><span data-i18n="rm1">Restoran hotel, dekat homestay</span></span><span class="pl-d">0,2 km</span></a></li>
+          <li><a href="https://www.google.com/maps/search/?api=1&amp;query=Bulbul+Resto+Balige" target="_blank" rel="noopener"><span class="pl-ic"><svg aria-hidden="true"><use href="#i-bowl"/></svg></span><span class="pl-b"><b>Bulbul Resto</b><span data-i18n="rm2">Restoran di kawasan pantai</span></span><span class="pl-d">0,3 km</span></a></li>
+          <li><a href="https://www.google.com/maps/search/?api=1&amp;query=Rumah+Dimsum+Balige+Balige" target="_blank" rel="noopener"><span class="pl-ic"><svg aria-hidden="true"><use href="#i-bowl"/></svg></span><span class="pl-b"><b>Rumah Dimsum Balige</b><span data-i18n="rm3">Dimsum</span></span><span class="pl-d">1,1 km</span></a></li>
+          <li><a href="https://www.google.com/maps/search/?api=1&amp;query=Tabo+Seafood+Balige+Balige" target="_blank" rel="noopener"><span class="pl-ic"><svg aria-hidden="true"><use href="#i-bowl"/></svg></span><span class="pl-b"><b>Tabo Seafood Balige</b><span data-i18n="rm4">Seafood</span></span><span class="pl-d">1,1 km</span></a></li>
+          <li><a href="https://www.google.com/maps/search/?api=1&amp;query=Balige+Seafood+Balige" target="_blank" rel="noopener"><span class="pl-ic"><svg aria-hidden="true"><use href="#i-bowl"/></svg></span><span class="pl-b"><b>Balige Seafood</b><span data-i18n="rm5">Seafood</span></span><span class="pl-d">1,2 km</span></a></li>
+          <li><a href="https://www.google.com/maps/search/?api=1&amp;query=RM+Khas+Batak+Monalisa+Balige" target="_blank" rel="noopener"><span class="pl-ic"><svg aria-hidden="true"><use href="#i-bowl"/></svg></span><span class="pl-b"><b>RM Khas Batak Monalisa</b><span data-i18n="rm6">Masakan khas Batak</span></span><span class="pl-d">1,4 km</span></a></li>
+      </ul>
+    </div>
     </div>
   </div>
 </section>
@@ -648,6 +696,7 @@ id:{
  'gal.title':'Lihat ke dalam',
  'nb.title':'Di sekitar homestay','nb1':'Pantai pasir putih Danau Toba, cukup jalan kaki dari homestay.','nb2':'Museum sejarah dan budaya Batak dengan replika rumah adat.','nb3':'Makam pahlawan nasional di Soposurung, Balige.','nb4':'Pasar tradisional beratap khas rumah Batak, paling ramai di hari pekan.','nb.walk':'Jalan kaki','nb.route':'Lihat rute',
  'fd.title':'Tempat makan terdekat','fd.note':'Jarak garis lurus dari homestay, menurut Google Maps.',
+ 'nb.t1':'Tempat wisata','nb.t2':'Kafe & kopi','nb.t3':'Rumah makan','nb.photo':'Foto','nb.archive':'arsip','sp1':'Pantai pasir putih Danau Toba, cukup jalan kaki dari homestay.','sp2':'Museum sejarah dan budaya Batak dengan replika rumah adat.','sp3':'Pasar tradisional beratap khas rumah Batak, paling ramai di hari pekan.','sp4':'Bukit pandang di Muara dengan panorama Danau Toba dari ketinggian, juga tempat paralayang.','nb.kafe.note':'Kafe yang sering direkomendasikan pengunjung. Jarak garis lurus dari homestay; ketuk untuk melihat foto dan ulasan di Google Maps.','nb.makan.note':'Rumah makan terdekat dari homestay. Jarak garis lurus; ketuk untuk melihat foto dan ulasan di Google Maps.','kf1':'Paling dekat dari homestay','kf2':'Kafe di pusat kota Balige','kf3':'Kopi dan makan di Jl. SM Raja','kf4':'Bistro dengan pemandangan danau','kf5':'Makan di tepi danau, banyak dipuji pengunjung','kf6':'Sering masuk daftar kafe populer Balige','rm1':'Restoran hotel, dekat homestay','rm2':'Restoran di kawasan pantai','rm3':'Dimsum','rm4':'Seafood','rm5':'Seafood','rm6':'Masakan khas Batak',
  'rv.title':'Kata tamu kami','rv.count':'dari 16 ulasan di Google','rv.cta':'Baca ulasan di Google Maps',
  'faq.title':'Tanya jawab',
  'q1':'Jam berapa check-in dan check-out?','a1':'Check-in mulai pukul 14.00, check-out paling lambat pukul 12.00. Kalau butuh jam lain, tanyakan lewat WhatsApp.',
@@ -676,6 +725,7 @@ en:{
  'gal.title':'Take a look inside',
  'nb.title':'Around the homestay','nb1':'White-sand beach on Lake Toba, within walking distance.','nb2':'Museum of Batak history and culture with traditional house replicas.','nb3':'Tomb of the national hero in Soposurung, Balige.','nb4':'Traditional market under Batak-style roofs, busiest on market day.','nb.walk':'Walking distance','nb.route':'Get directions',
  'fd.title':'Places to eat nearby','fd.note':'Straight-line distance from the homestay, per Google Maps.',
+ 'nb.t1':'Places to visit','nb.t2':'Cafés & coffee','nb.t3':'Places to eat','nb.photo':'Photo','nb.archive':'archive','sp1':'White-sand beach on Lake Toba, within walking distance.','sp2':'Museum of Batak history and culture with traditional house replicas.','sp3':'Traditional market under Batak-style roofs, busiest on market day.','sp4':'Hilltop viewpoint in Muara overlooking Lake Toba, also a paragliding spot.','nb.kafe.note':'Cafés that visitors often recommend. Straight-line distance from the homestay; tap to see photos and reviews on Google Maps.','nb.makan.note':'Places to eat closest to the homestay. Straight-line distance; tap to see photos and reviews on Google Maps.','kf1':'Closest to the homestay','kf2':'Café in central Balige','kf3':'Coffee and meals on Jl. SM Raja','kf4':'Bistro with a lake view','kf5':'Lakeside dining, well reviewed by visitors','kf6':'Often listed among popular Balige cafés','rm1':'Hotel restaurant near the homestay','rm2':'Restaurant in the beach area','rm3':'Dim sum','rm4':'Seafood','rm5':'Seafood','rm6':'Traditional Batak food',
  'rv.title':'What guests say','rv.count':'from 16 Google reviews','rv.cta':'Read reviews on Google Maps',
  'faq.title':'Questions and answers',
  'q1':'What are the check-in and check-out times?','a1':'Check-in from 2 PM, check-out by 12 PM. If you need other times, ask us on WhatsApp.',
@@ -699,6 +749,11 @@ function setLang(l){
   updateBar();
 }
 document.querySelectorAll('.lang button').forEach(b=>b.addEventListener('click',()=>setLang(b.dataset.lang)));
+
+const tabs=[...document.querySelectorAll('.tabs [role="tab"]')];
+function selectTab(t){tabs.forEach(x=>{const on=x===t;x.setAttribute('aria-selected',on);x.tabIndex=on?0:-1;document.getElementById(x.getAttribute('aria-controls')).hidden=!on;});}
+tabs.forEach((t,i)=>{t.addEventListener('click',()=>selectTab(t));
+  t.addEventListener('keydown',e=>{if(e.key!=='ArrowRight'&&e.key!=='ArrowLeft')return;const n=tabs[(i+(e.key==='ArrowRight'?1:tabs.length-1))%tabs.length];selectTab(n);n.focus();});});
 
 const nav=document.getElementById('nav'),waF=document.getElementById('waFloat');
 function onScroll(){nav.classList.toggle('solid',scrollY>40);waF.classList.toggle('show',scrollY>innerHeight*.7);}
